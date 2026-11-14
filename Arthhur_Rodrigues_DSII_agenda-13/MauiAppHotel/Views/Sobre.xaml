@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre" Title="Sobre"
+             BackgroundColor="#EEF4F2">
+    <ScrollView>
+        <VerticalStackLayout Padding="20,24" Spacing="14"
+                             MaximumWidthRequest="560">
+            <Border>
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Hotel Horizonte" Style="{StaticResource SectionTitle}"
+                           SemanticProperties.HeadingLevel="Level1" />
+                    <Label Text="Aplicativo para simular o custo de uma estadia." />
+                    <Label Text="Desenvolvedor" FontAttributes="Bold" />
+                    <Label Text="Arthhur Rodrigues" />
+                    <Label Text="Ano de desenvolvimento" FontAttributes="Bold" />
+                    <Label Text="2026" />
+                    <Label Text="Desenvolvimento de Sistemas II · Agenda 13" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

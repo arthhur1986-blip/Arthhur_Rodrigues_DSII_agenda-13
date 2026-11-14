@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem" Title="Hotel Horizonte"
+             BackgroundColor="#EEF4F2">
+    <ScrollView>
+        <VerticalStackLayout Padding="20,24" Spacing="14"
+                             MaximumWidthRequest="560">
+            <Border BackgroundColor="#123C42" StrokeThickness="0" Padding="22">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Cálculo da diária" FontSize="30" FontAttributes="Bold"
+                           TextColor="White" SemanticProperties.HeadingLevel="Level1" />
+                    <Label Text="Escolha a suíte e planeje sua estadia."
+                           TextColor="#DEF0EA" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Hóspedes" Style="{StaticResource SectionTitle}" />
+                    <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto,Auto"
+                          ColumnSpacing="12" RowSpacing="8">
+                        <Label Text="Adultos" />
+                        <Label Grid.Column="1" Text="{Binding Value, Source={x:Reference Adultos}}" />
+                        <Stepper Grid.Column="2" x:Name="Adultos" Minimum="0" Maximum="10" Value="1"
+                                 SemanticProperties.Description="Quantidade de adultos" />
+                        <Label Grid.Row="1" Text="Crianças" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Value, Source={x:Reference Criancas}}" />
+                        <Stepper Grid.Row="1" Grid.Column="2" x:Name="Criancas" Minimum="0" Maximum="10"
+                                 SemanticProperties.Description="Quantidade de crianças" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border>
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Escolha sua suíte" Style="{StaticResource SectionTitle}" />
+                    <Picker x:Name="Quarto" Title="Selecione sua acomodação"
+                            TextColor="#123C42" TitleColor="#375955" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Período da estadia" Style="{StaticResource SectionTitle}" />
+                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" RowSpacing="8">
+                        <Label Text="Check-in" />
+                        <DatePicker Grid.Column="1" x:Name="CheckIn" Format="dd/MM/yyyy"
+                                    TextColor="#123C42" DateSelected="AoMudarCheckIn"
+                                    SemanticProperties.Description="Data de check-in" />
+                        <Label Grid.Row="1" Text="Check-out" />
+                        <DatePicker Grid.Row="1" Grid.Column="1" x:Name="CheckOut" Format="dd/MM/yyyy"
+                                    TextColor="#123C42" SemanticProperties.Description="Data de check-out" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Avançar" Clicked="AoAvancar" FontAttributes="Bold"
+                    BackgroundColor="#176353" TextColor="White" CornerRadius="14" />
+            <Button Text="Sobre" Clicked="AoAbrirSobre" TextColor="#123C42"
+                    BackgroundColor="#DCECE6" CornerRadius="14" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

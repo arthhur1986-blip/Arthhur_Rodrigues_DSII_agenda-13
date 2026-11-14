@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemContratada" Title="Resumo da estadia"
+             BackgroundColor="#EEF4F2">
+    <ScrollView>
+        <VerticalStackLayout Padding="20,24" Spacing="14"
+                             MaximumWidthRequest="560">
+            <Border>
+                <VerticalStackLayout Spacing="14">
+                    <Label Text="Resumo da estadia" Style="{StaticResource SectionTitle}"
+                           SemanticProperties.HeadingLevel="Level1" />
+                    <Label x:Name="Acomodacao" />
+                    <Label x:Name="Hospedes" />
+                    <Label x:Name="Periodo" />
+                    <Label x:Name="ValorDiaria" />
+                    <Label x:Name="Total" FontSize="26" FontAttributes="Bold" />
+                    <Label Text="Simulação com tarifas fictícias por suíte." FontSize="13" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
